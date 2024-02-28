@@ -37,13 +37,19 @@ function App() {
         });
       });
 
+      spotify.getMe().then((profile) => {
+        dispatch({
+          type: "SET_ME",
+          profile: profile,
+        });
+      });
 
       spotify.getPlaylist("3lec3CzDPAxsZokPph5w87").then((response) =>
       dispatch({
         type: "SET_DISCOVER_WEEKLY",
         discover_weekly: response,
       })
-    );
+    ).catch((error)=>console.log(error));
 
     spotify.getMyTopArtists().then((response) =>
     dispatch({

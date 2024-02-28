@@ -1,4 +1,3 @@
-
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 const clientId = "3d9415b5cd834a2280123e8142c1aa1b";
 const redirectUri = process.env.NODE_ENV === "development" ? "http://localhost:3000/" : "https://spotiy-clone.vercel.app/"
@@ -22,6 +21,6 @@ const scopes = [
       }, {});
   };
   
-  export const accessUrl = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
+  export const accessUrl =`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
     "%20"
   )}&response_type=token&show_dialog=true`;

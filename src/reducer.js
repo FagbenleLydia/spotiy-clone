@@ -1,4 +1,3 @@
-import { findAllByDisplayValue } from "@testing-library/react";
 
 export const initialState = {
     user: null,
@@ -6,6 +5,7 @@ export const initialState = {
     token: null,
     playing: false,
     item: null,
+    
   };
   
   const reducer = (state, action) => {
@@ -28,7 +28,12 @@ export const initialState = {
               ...state,
               playlists: action.playlists,
             };
-
+            case "SET_ME":
+              return {
+                ...state,
+                profile: action.profile,
+              };
+  
             case "SET_DISCOVER_WEEKLY":
                 return {
                   ...state,
